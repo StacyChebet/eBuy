@@ -1,0 +1,48 @@
+.navbar-brand{
+    margin-right: 900px;
+    color: #FDA504;
+    font-size: 50px;
+}
+.nav-link{
+    color: #FDA504;
+    font-size: 20px;
+}
+.human{
+    height:100px;
+    width:100px;
+}
+.submit{
+    background-color: #FDC12A;
+    border-radius: 6px;
+}
+.formWrapper{
+    height: 600px;
+    width: 700px;
+    padding-top: 60px;
+    /* margin-left: 10%;
+    margin-right: 30%;
+    margin-top: 5%; */
+    margin: auto;
+    margin-top: 1%;
+}
+.formHeading{
+    text-align:center;
+}   
+.loginForm{
+    /* border: 5px; */
+    /* border-style: solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+    margin-top: 1%;
+    justify-items: center;
+    height: 550px;
+    width: 700px;
+    text-align: center; 
+}
+.login{
+    /* padding-top: 100px; */
+    margin-top:20px;
+    position: absolute;
+}

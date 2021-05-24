@@ -1,0 +1,31 @@
+body{
+    background-image: url(../images/cable.jpeg);
+}
+.navbar-brand{
+    margin-right: 900px;
+    color: #FDA504;
+    font-size: 50px;
+    font-weight: bold;
+}
+.nav-link{
+    color: #FDA504;
+    font-size: 20px;
+    font-weight: bold;
+}
+.registrationForm{
+    border: 5px;
+    border-style: solid;
+    margin:auto;
+    height: 800px;
+    width: 550px;
+    text-align: center;
+    justify-content: center;
+    background-color: #FEEB75;
+}
+.register{
+    margin-top:10%;
+}
+.submit{
+    background-color: #FDA504;
+    border-radius: 12px;
+}

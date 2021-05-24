@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href = "../static/css/bootstrap.css" rel = "stylesheet" type ="text/css">
+    <link href = "../../static/css/login.css" rel = "stylesheet" type ="text/css">
+    <script src = "../../static/js/bootstrap.min.js"></script>
+    <title>Stocking Clerk Login</title>
+</head>
+<body>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <a class="navbar-brand" href="{{ url_for('warehouseStaffLogin') }}">eBuy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('aboutUs') }}">About Us</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('contactUs') }}">Contact Us</a>
+                </li>
+        </ul>
+        </div>
+    </nav>
+    <div class="loginForm">
+        <div class="login">
+            <form style="max-width: 600px;" method="POST" style="margin:auto" action="">
+                <img src="../../static/images/warehouseIcon.jpg" alt="human" class="human">     
+                <h1 class="formHeading">LOGIN</h1>
+                <div class="form-group">
+                    <label for="email">Username:</label>
+                    <input type="text" class="form-control" name="username" id="email" required/>
+                </div>
+                <div class="form-group">
+                    <label for="pwd">Password:</label>
+                    <input type="password" name="pswd" class="form-control" id="pwd" required/>
+                </div>
+
+                <button type="submit" name="login" class="submit">Login </button>
+                <p>Don't have an account?<a href="" class="signup"> Sign up</a></p>
+            </form>
+        </div> 
+    </div>
+</body>
+</html>

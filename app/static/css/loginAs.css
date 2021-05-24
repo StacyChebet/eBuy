@@ -1,0 +1,25 @@
+.navbar-brand{
+    margin-right: 900px;
+    color: #FDA504;
+    font-size: 50px;
+}
+.nav-link{
+    color: #FDA504;
+    font-size: 20px;
+}
+h2{
+    color: black;
+    text-align: center;
+}
+img {
+    height: 300px;
+}
+.card-body{
+    font-weight: bolder;
+    font-size: 20px;
+    text-align: center;
+}
+.card-body a{
+    color: black;
+    
+}
