@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../../static/css/aboutUs.css" rel="stylesheet" type="text/css">
+    <script src="../../static/js/bootstrap.min.js"></script>
+    <title>Laptops</title>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <a class="navbar-brand" href="{{ url_for('laptops') }}">eBuy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('updateLaptops') }}">Update Inventory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('warehouseStaffStaffDashboard') }}">Back</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    {% for laptop in laptops%}
+    <div class="card">
+        <div class="card-body">
+            <h5>Lenovo Idea Pad</h5>
+            <p>Quantity: {{laptop.LenovoQuantity}}</p>
+        </div>
+        <br>
+        <div class="card-body">
+            <h5>Asus</h5>
+            <p>Quantity: {{laptop.AsusQuantity}}</p>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+
+</html>

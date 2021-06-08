@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../../static/css/cartCss/cart.css" rel="stylesheet" type="text/css">
+    <script src="../../static/js/bootstrap.min.js"></script>
+    <title>Cart</title>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <a class="navbar-brand" href="{{ url_for('cart') }}">eBuy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('home') }}">Back</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">{{ session['username'] }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('userLogout') }}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>CART</h1>
+        {% for order in orders %}
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Name: {{order.name}}</h5>
+                <p class="card-text">Amount: {{ order.amount}}</p>
+                
+                <form method="POST" action="/Delete/Item">
+                    <input type="submit" name="delete" value="Remove item">
+                    <input type="hidden" name="deleteId" value="{{session['orderId']}}">
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+        <div class="heading">
+            <h1><span style="font-weight: bolder;">Total amount:</span> {{ counter }}</h1>
+        </div>
+        <br/>
+        <div class="forms">
+            <form method="POST" action="/Delivery/Form">
+                <input type="submit" name="delivery" value="Delivery details" class="delivery">
+                <input type="hidden" name="delivery" value="{{session['id']}}">
+            </form>
+            <form method="POST" action="/Cart/Checkout">
+                <input type="submit" name="checkoutBtn" value="Proceed to Checkout" class="checkout">
+                <input type="hidden" name="userId" value="{{session['id']}}">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

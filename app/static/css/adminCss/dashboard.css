@@ -1,0 +1,38 @@
+.navbar-brand{
+    margin-right: 300px;
+    color: #FDA504;
+    font-size: 30px;
+}
+.nav-link{
+    color: #FDA504;
+    font-size: 20px;
+}
+.addProductForm{
+    border: 5px;
+    border-style: solid;
+    margin:auto;
+    margin-top: 5%;
+    height: 550px;
+    width: 550px;
+    text-align: center;
+    justify-content: center;
+    
+}
+.addProduct{
+    margin-top:7%;
+}
+.submit{
+    background-color: #FDA504;
+    border-radius: 12px;
+    color: #FD6A02;
+    border-color: transparent;
+}
+label{
+    text-align: right;
+    float: left;
+    padding-left: 30px;
+}
+.textbox{
+    float: right;
+    margin-right: 70px;
+}

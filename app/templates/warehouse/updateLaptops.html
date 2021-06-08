@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../../static/css/aboutUs.css" rel="stylesheet" type="text/css">
+    <script src="../../static/js/bootstrap.min.js"></script>
+    <title>Update Laptops</title>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <a class="navbar-brand" href="{{ url_for('updateLaptops') }}">eBuy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('updateLaptops') }}">Update Inventory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('laptops') }}">Back</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="">
+        <div class="">
+            <form style="max-width: 600px;" method="POST" action="/warehouse/updatePhones">
+                <h1 class="formHeading">UPDATE LAPTOPS</h1>
+                <div class="form-group">
+                    <label for="productId">Product Id:</label>
+                    <input type="text" name="productId"><br /><br />
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity:</label>
+                    <input type="text" name="quantity"><br /><br />
+                </div>
+    
+                <input type="submit" name="update" value="UPDATE" class="update"><br /><br />
+            </form>
+        </div>
+    </div>
+</body>

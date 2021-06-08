@@ -1,5 +1,8 @@
+body{
+    background-color: black;
+}
 .navbar-brand{
-    margin-right: 850px;
+    margin-right: 970px;
     color: #FDA504;
     font-size: 50px;
 }
@@ -15,4 +18,7 @@
 }
 #index3{
     height: 500px;
+}
+#index4{
+    height: 800px;
 }

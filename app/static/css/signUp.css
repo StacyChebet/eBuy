@@ -1,8 +1,9 @@
 body{
-    background-image: url(../images/cable.jpeg);
+    /* background-image: url(../images/cable.jpeg); */
+    background-color: black;
 }
 .navbar-brand{
-    margin-right: 900px;
+    margin-right: 1000px;
     color: #FDA504;
     font-size: 50px;
     font-weight: bold;
@@ -16,16 +17,32 @@ body{
     border: 5px;
     border-style: solid;
     margin:auto;
-    height: 800px;
+    height: 700px;
     width: 550px;
     text-align: center;
     justify-content: center;
     background-color: #FEEB75;
 }
 .register{
-    margin-top:10%;
+    margin-top:5%;
 }
 .submit{
     background-color: #FDA504;
     border-radius: 12px;
+}
+label{
+    text-align: right;
+    float: left;
+    padding-left: 30px;
+}
+.textbox{
+    float: right;
+    margin-right: 70px;
+}
+.login{
+    color:#FD6A02;
+}
+.submit{
+    color: #FD6A02;
+    border-color: transparent;
 }

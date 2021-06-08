@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="../../static/css/adminCss/dashboard.css" rel="stylesheet" type="text/css">
+        <script src="../../static/js/bootstrap.min.js"></script>
+        <title>Phone Orders</title>
+    </head>
+
+    <body>
+        <!--Navigation bar-->
+        <nav class="navbar navbar-expand-lg bg-transparent">
+            <a class="navbar-brand" href="{{ url_for('placeOrder') }}">eBuy</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('ccStaffDashboard') }}">Back</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('ccStaffDashboard') }}">PlaceOrder</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('ccStaffProfile') }}">Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <h1>ORDERS</h1>
+            {% for order in orders %}
+            {% for product in products %}
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ order.id }}</h5>
+                    <p class="card-text">{{ order.firstName }} {{ order.lastName }}</p>
+                    <p class="card-text">{{ order.phone }}</p>
+                    <p class="card-text">{{ product.name }}</p>
+                    <p class="card-text">{{ order.amount }}</p>
+                </div>
+            </div>
+            {% endfor %}
+            {% endfor %}
+            <br/>
+        </div>
+    </body>
+</html>

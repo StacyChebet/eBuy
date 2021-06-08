@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../../static/css/adminCss/lists.css" rel="stylesheet" type="text/css">
+    <script src="../../static/js/bootstrap.min.js"></script>
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <a class="navbar-brand" href="{{ url_for('dashboard') }}">eBuy - Admin Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('topCustomer') }}">Back</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="addProductForm">
+            <div class="addProduct">
+                <form style="max-width: 600px;" method="POST" action="/LatePackages/Report">
+                    <h1 class="formHeading"><b>ADD LATE DELIVERY</b></h1>
+                    <div class="form-group">
+                        <label for="trackingNumber">Tracking Number:</label>
+                        <input type="text" name="trackingNumber" class="textbox"><br /><br />
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location:</label>
+                        <input type="text" name="location" class="textbox"><br /><br />
+                    </div>
+                    <div class="form-group">
+                        <label for="deliveryId">Delivery Id:</label>
+                        <input type="text" name="deliveryId" class="textbox"><br /><br />
+                    </div>
+                    <input type="submit" name="add" value="ADD" class="submit"><br /><br />
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

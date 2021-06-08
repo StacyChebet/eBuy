@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../../static/css/customerSeviceCss/dashboard.css" rel="stylesheet" type="text/css">
+    <script src="../../static/js/bootstrap.min.js"></script>
+    <title>Town Dashboard</title>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <a class="navbar-brand" href="{{ url_for('dashboard') }}">eBuy - Town Inventory</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('townInventory') }}">Inventory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('upperHillInventory') }}">UpperHill Inventory</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>TOWN INVENTORY</h1>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><b>Inventory List</b></h5>
+            {% if inventory %}
+                <p class="card-text" style="font-size: larger;"><b>ProMax Quantity: </b>{{ inventory.proMaxQuantity }}</p>
+                <p class="card-text" style="font-size: larger;"><b>Galaxy Quantity: </b>{{ inventory.GalaxyQuantity }}</p>
+                <p class="card-text" style="font-size: larger;"><b>Tecno DroidPad Quantity: </b>{{ inventory.TecnoQuantity }}</p>
+                <p class="card-text" style="font-size: larger;"><b>Samsung Tab Quantity: </b>{{ inventory.SamsungTabQuantity }}</p>
+                <p class="card-text" style="font-size: larger;"><b>Canon Quantity: </b>{{ inventory.CanonQuantity }}</p>
+                <p class="card-text" style="font-size: larger;"><b>Nikon Quantity: </b>{{ inventory.NikonQuantity }}</p>
+                <p class="card-text" style="font-size: larger;"><b>LenovoQuantity: </b>{{ inventory.LenovoQuantity }}</p>
+                <p class="card-text" style="font-size: larger;"><b>AsusQuantity: </b>{{ inventory.AsusQuantity }}</p>
+            </div>
+            {% endif%}
+        </div>
+    </div>
+</body>
+
+</html>

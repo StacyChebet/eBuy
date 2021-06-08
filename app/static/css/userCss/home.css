@@ -1,0 +1,30 @@
+body{
+    text-align: center;
+}
+.navbar-brand{
+    margin-right: 900px;
+    color: #FDA504;
+    font-size: 50px;
+}
+.nav-link{
+    color: #FDA504;
+    font-size: 20px;
+}
+.card-img-top{
+    height: 300px;
+    width: 300px;
+}
+.card{
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    width: 600px;
+    margin-bottom: 20px;
+}
+h1{
+    color: #FDA504;
+}
+
+input{
+    background-color: black;
+    color:#FDA504;
+}

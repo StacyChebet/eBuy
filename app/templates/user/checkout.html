@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../../static/css/aboutUs.css" rel="stylesheet" type="text/css">
+    <script src="../../static/js/bootstrap.min.js"></script>
+    <title>Checkout</title>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <a class="navbar-brand" href="{{ url_for('checkOut') }}">eBuy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('cart') }}">Back</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">{{ session['username'] }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('userLogout') }}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1>CHECKOUT</h1>
+        <p>Total amount spent: </p>
+        <p>Ksh. {{session['total']}}</p> 
+
+        <div class=options>
+            <h1>PAYMENT OPTIONS</h1>
+            <p>Please select an option below to pay: </p>
+            <img src="../../static/images/creditCard.jpeg" style="float: left;">
+            <img src="../../static/images/mpesa.png" style="float: right;">
+        </div>
+    </div>
+</body>
+
+</html>

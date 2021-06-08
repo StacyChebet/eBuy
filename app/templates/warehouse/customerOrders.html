@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../../static/css/aboutUs.css" rel="stylesheet" type="text/css">
+    <script src="../../static/js/bootstrap.min.js"></script>
+    <title>orders</title>
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-expand-lg bg-transparent">
+        <a class="navbar-brand" href="{{ url_for('customerOrders') }}">eBuy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('warehouseStaffStaffDashboard') }}">Back</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {% for pOrder in phoneOrders%}
+    <div class="card">
+        <div class="card-body">
+            <h5>ORDER</h5>
+            <p>Name: {{pOrder.firstName}} {{pOrder.lastName}}</p>
+            <p>Product Id: {{pOrder.productId}}</p>
+            <p>Amount: {{pOrder.amount}}</p>
+        </div>
+    </div>
+    {% endfor %}
+    {% for order in onlineOrders%}
+    {% for user in users%}
+    <div class="card">
+        <div class="card-body">
+            <h5>ORDER</h5>
+            <p>Name: {{user.firstName}} {{user.lastName}}</p>
+            <p>Product: {{order.productId}}</p>
+            <p>Amount: {{order.amount}}</p>
+        </div>
+    </div>
+    {% endfor %}
+    {% endfor %}
+</body>
+
+</html>

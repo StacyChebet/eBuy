@@ -12,7 +12,7 @@
 <body>
     <!--Navigation bar-->
     <nav class="navbar navbar-expand-lg bg-transparent">
-        <a class="navbar-brand" href="loginAs.html">eBuy</a>
+        <a class="navbar-brand" href="{{ url_for('customerServiceStaffLogin') }}">eBuy</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
@@ -21,25 +21,31 @@
             <li class="nav-item">
             <a class="nav-link" href="{{ url_for('aboutUs') }}">About Us</a>
             </li>
-
             <li class="nav-item">
                 <a class="nav-link" href="{{ url_for('contactUs') }}">Contact Us</a>
-                </li>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('csStaffSignUp') }}">Sign Up</a>
+            </li>
         </ul>
         </div>
     </nav>
     <div class="loginForm">
         <div class="login">
-            <form style="max-width: 600px;" method="POST" style="margin:auto" action="">
+            <form style="max-width: 600px;" method="POST" style="margin:auto" action="/customerServiceStaff/login">
                 <img src="../../static/images/customerServiceIcon.png" alt="human" class="human">     
                 <h1 class="formHeading">LOGIN</h1>
+                <div class="form-group">
+                    <label for="storeId">Store Id:</label>
+                    <input type="text" class="form-control" name="storeId" id="storeId" required />
+                </div>
                 <div class="form-group">
                     <label for="email">Username:</label>
                     <input type="text" class="form-control" name="username" id="email" required/>
                 </div>
                 <div class="form-group">
-                    <label for="pwd">Password:</label>
-                    <input type="password" name="pswd" class="form-control" id="pwd" required/>
+                    <label for="password">Password:</label>
+                    <input type="password" name="password" class="form-control" id="password" required/>
                 </div>
 
                 <button type="submit" name="login" class="submit">Login </button>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="../../static/css/warehouse/dashboard.css" rel="stylesheet" type="text/css">
+        <script src="../../static/js/bootstrap.min.js"></script>
+        <title>Dashboard</title>
+    </head>
+
+    <body>
+        <!--Navigation bar-->
+        <nav class="navbar navbar-expand-lg bg-transparent">
+            <a class="navbar-brand" href="{{ url_for('dashboard') }}">eBuy - Warehouse Dashboard</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li>
+                        <a class="nav-link" href="{{ url_for('placeWarehouseOrder') }}">Place Order</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('customerOrders') }}">Customer Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('warehouseOrders') }}">Warehouse Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('storeOrders') }}">Store Orders</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="card">
+            
+            <div class="card-body">
+                <img class="card-img-top" src="../../static/images/phones.jpeg" alt="Card image cap">
+                <h5 class="card-title"><a href="{{url_for('phones')}}">Phones</a></h5>
+            
+            </div>
+            <div class="card-body">
+                <img class="card-img-top" src="../../static/images/tablets.jpeg" alt="Card image cap">
+                <h5 class="card-title"><a href="{{url_for('tablets')}}">Tablets</a></h5>
+                
+            </div>
+            <div class="card-body">
+                <img class="card-img-top" src="../../static/images/cameras.jpeg" alt="Card image cap">
+                <h5 class="card-title"><a href="{{url_for('cameras')}}">Cameras</a></h5>
+                
+            </div>
+            <div class="card-body">
+                <img class="card-img-top" src="../../static/images/laptops.jpeg" alt="Card image cap">
+                <h5 class="card-title"><a href="{{url_for('laptops') }}">Laptops</a></h5>
+                
+            </div>
+        </div>
+    </body>
+</html>
